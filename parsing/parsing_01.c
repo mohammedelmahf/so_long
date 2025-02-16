@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 17:29:29 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:48:33 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int     check_args(int ac , char **av)
 {
     if(ac != 2)
     {
-        ft_putstr_fd("Worng  number of arguments\n" , 1);
+        ft_putstr_fd("Error : Worng  number of arguments\n" , 1);
         ft_putstr_fd("Usage : ./so_long [map.ber]\n" , 1);
         return(0);
     }
     if(!check_ber(av[1]))
     {
-        ft_putstr_fd("Wrong file extension\n",1);
+        ft_putstr_fd("Error : Wrong file extension\n",1);
         return(0);
     }
     if(open(av[1] , O_RDONLY) == -1)
@@ -54,12 +54,10 @@ int		check_map(t_build *build)
 {
 	if(!build->map)
 	{
-		printf("first if\n");
 		return(0);
 	}
 	if(!check_map1(build))
 	{
-		printf("second if\n");
 		return(0);
 	}
 	else

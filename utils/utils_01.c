@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_01.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 13:37:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 17:44:10 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/02/16 17:40:48 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/16 17:41:35 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/so_long.h"
+#include "../header/so_long.h"
 
-int main(int ac , char **av)
+void free_array(char **map)
 {
-    t_build build;
-    
-    if(!check_args(ac , av))
-        return(0);
-    build_args(&build);
-    build.map = arg_to_map(av);
-    if(!check_map(&build))
+    if (map == NULL)
+        return;
+    int i = 0;
+    while (map[i] != NULL)
     {
-        free_array(build.map);
-        return(0);
+        free(map[i]);
+        i++;
     }
-    else
-        printf("valid map");
+    free(map);
 }

@@ -5,9 +5,14 @@ FLAGS   = -Wall -Wextra -Werror #-fsanitize=address -g3
 RM      = rm -f
 
 SRCS    = 	main.c \
+			Get_next_line/get_next_line.c \
+			Get_next_line/get_next_line_utils.c \
 			utils/ft_putstr_fd.c \
 			utils/ft_strlen.c \
-			parsing/parsing_01.c 
+			utils/ft_split.c \
+			utils/utils_01.c \
+			parsing/parsing_01.c \
+			parsing/parsing_02.c  
 
 # BSRCS   = 
 OBJS    = $(SRCS:.c=.o)

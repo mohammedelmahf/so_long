@@ -6,13 +6,13 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 14:29:12 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:46:54 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
 
-char **arg_to_map(char *av)
+char **arg_to_map(char **av)
 {
     int fd;
     char *line;
@@ -26,10 +26,11 @@ char **arg_to_map(char *av)
         ft_putstr_fd("Map is empty\n" , 1);
         exit(0);
     }
-    map_1d = ft_strdup("");
+    map_1d = ft_strdup_gnl("");
     while(line)
     {
         map_1d = ft_strjoin_gnl(map_1d , line);
+        free(line);
         line = get_next_line(fd);
     }
     close(fd);
@@ -37,4 +38,40 @@ char **arg_to_map(char *av)
     free(line);
     free(map_1d);
     return(map_2d);
+}
+
+int     count_line(t_build *build)
+{
+    int i;
+    i = 0;
+    while(build->map[i])
+        i++;
+    return(i);
+}
+
+int check_map1(t_build *build)
+{
+    int i;
+    i = 0;
+    
+    while (build->map[0][i])
+    {
+        if(build->map[0][i] != '1')
+        {
+            ft_putstr_fd("Error : Invalid top border (not a wall).\n" ,1);
+            return(0);
+        }
+        i++;
+    }
+    i = 0;
+    while (build->map[count_line(build) - 1 ][i])
+    {
+        if(build->map[count_line(build) - 1 ][i] != '1')
+        {
+            ft_putstr_fd("Error : Invalid bottom border (not a wall).\n" , 1);
+            return(0);
+        }
+        i++;
+    }
+    return(1);
 }

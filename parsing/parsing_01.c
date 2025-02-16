@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 14:12:36 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:29:29 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,23 @@ int     check_args(int ac , char **av)
     return(1);
 }
 
-void    buils_args(t_build *build)
+int		check_map(t_build *build)
+{
+	if(!build->map)
+	{
+		printf("first if\n");
+		return(0);
+	}
+	if(!check_map1(build))
+	{
+		printf("second if\n");
+		return(0);
+	}
+	else
+		return(1);
+}
+
+void    build_args(t_build *build)
 {
 	if (!build)
 		return;

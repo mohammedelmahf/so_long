@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 13:37:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 14:13:24 by maelmahf         ###   ########.fr       */
+/*   Created: 2024/10/24 12:30:06 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/16 13:51:53 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/so_long.h"
+#include "../header/so_long.h"
 
-int main(int ac , char **av)
+size_t	ft_strlen(const char *str)
 {
-    t_build build;
-    
-    if(!check_args(ac , av))
-        return(0);
-    build_args(&build);
-    build.map = 
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

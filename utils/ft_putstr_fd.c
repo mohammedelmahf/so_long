@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 13:37:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 14:13:24 by maelmahf         ###   ########.fr       */
+/*   Created: 2024/10/28 12:07:16 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/16 13:51:59 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/so_long.h"
+#include "../header/so_long.h"
 
-int main(int ac , char **av)
+void	ft_putstr_fd(char *s, int fd)
 {
-    t_build build;
-    
-    if(!check_args(ac , av))
-        return(0);
-    build_args(&build);
-    build.map = 
+	if (fd >= 0 && s)
+		write(fd, s, ft_strlen(s));
 }

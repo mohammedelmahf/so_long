@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 19:57:20 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 13:37:16 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/16 14:29:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,3 @@ char	*get_next_line(int fd)
 	buffer = get_rest(buffer, ft_strlen_gnl(buffer));
 	return (line);
 }
-
-// int main()
-// {
-//     // int fd = open("text.txt", O_RDONLY);
-//     char *s = get_next_line(-1);
-//     printf("%s", s);
-//     free(s);
-//     return (0);
-// }

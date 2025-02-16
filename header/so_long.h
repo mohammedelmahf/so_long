@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 14:07:50 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/16 14:18:54 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ typedef struct s_build
 //parsing
 int     check_ber(char *ber);
 int     check_args(int ac , char **av);
+void    buils_args(t_build *build);
+char	**arg_to_map(char **av);
 //utils
 void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *str);

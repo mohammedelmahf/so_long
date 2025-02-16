@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:37:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 14:13:24 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/16 14:18:48 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int main(int ac , char **av)
     if(!check_args(ac , av))
         return(0);
     build_args(&build);
-    build.map = 
+    build.map = arg_to_map(av);
 }

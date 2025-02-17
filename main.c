@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:37:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 17:49:21 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:09:41 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main(int ac , char **av)
         return(0);
     }
     else
-        printf("valid map");
+        printf("valid map\n");
     free_array(build.map);
 }

@@ -11,6 +11,7 @@ SRCS    = 	main.c \
 			utils/ft_strlen.c \
 			utils/ft_split.c \
 			utils/utils_01.c \
+			utils/ft_strchr.c \
 			parsing/parsing_01.c \
 			parsing/parsing_02.c  
 

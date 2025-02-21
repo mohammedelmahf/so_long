@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/21 16:35:37 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:20:19 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,28 @@ int     check_map3(t_build *build)
         {
             ft_putstr_fd("Map is not valid\n",1);
             return(0);
+        }
+        i++;
+    }
+    return(1);
+}
+
+int     check_map4(t_build *build)
+{
+    int i;
+    int j;
+
+    i = 0;
+
+    while(build->map[i])
+    {
+        j = 0;
+        while(build->map[i][j])
+        {
+            printf("%d" ,build->map[i][j]);
+            if(!ft_strchr("10PECX" , build->map[i][j]))
+                return(0);
+            j++;
         }
         i++;
     }

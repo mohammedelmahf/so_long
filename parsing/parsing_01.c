@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/21 16:11:46 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:23:47 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,17 @@ int     check_args(int ac , char **av)
 int		check_map(t_build *build)
 {
 	if(!build->map)
-	{
 		return(0);
-	}
 	if(!check_map1(build))
-	{
 		return(0);
-	}
-	
+	if(!check_map2(build))
+		return(0);
+	// if(!check_map3(build))
+	// 	return(0);
+	// if(!check_map4(build))
+	// 	return(0);
+	// if(!check_elements(build))
+	// 	return(0);
 	else
 		return(1);
 }

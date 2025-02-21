@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 17:41:49 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:24:19 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char		**arg_to_map(char **av);
 int			count_line(t_build *build);
 int 		check_map1(t_build *build);
 int			check_map(t_build *build);
+int    	    check_map2(t_build *build);
 //utils
 void		ft_putstr_fd(char *s, int fd);
 size_t		ft_strlen(const char *str);

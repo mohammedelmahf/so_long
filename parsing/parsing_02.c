@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/21 16:23:32 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:35:37 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,23 @@ int     check_map2(t_build *build)
         if(ft_strlen(build->map[i]) != len)
         {
             ft_putstr_fd("Map is not rectangular\n" , 1);
+            return(0);
+        }
+        i++;
+    }
+    return(1);
+}
+
+int     check_map3(t_build *build)
+{
+    int i;
+    i = 0;
+
+    while(build->map[i])
+    {
+        if(build->map[i][0] != '1' || build->map[i][ft_strlen(build->map[i]) - 1] != '1')
+        {
+            ft_putstr_fd("Map is not valid\n",1);
             return(0);
         }
         i++;

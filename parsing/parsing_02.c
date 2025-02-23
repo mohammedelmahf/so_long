@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 12:38:47 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/23 12:55:44 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,5 +137,35 @@ int     check_map4(t_build *build)
 
 int     check_elements(t_build *build)
 {
+    elements_counter(build);
+    printf("number of exit = %d\n number of coins = %d\n number of player = %d\n number of enemy = %d\n" , build->exit , build->c , build->player , build->enemy);
+    return 1;
+}
+
+void    elements_counter(t_build *build)
+{
+    int i;
+    int j;
     
+    i = 0;
+
+    while(build->map[i])
+    {
+        j = 0;
+        while(build->map[i][j])
+        {
+            if(build->map[i][j] == 'E')
+                build->exit++;
+            if(build->map[i][j] == 'P')
+                build->player++;
+            if(build->map[i][j] == 'C')
+                build->c++;
+            if(build->map[i][j] == 'X')
+                build->enemy++;
+            j++;
+        }
+        i++;
+    }
+    build->width = j;
+    build->height = i;
 }

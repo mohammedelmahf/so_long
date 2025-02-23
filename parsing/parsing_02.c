@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 13:18:39 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:23:32 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,5 +209,19 @@ void    elements_coordinates(t_build *build)
 
 void    saving_elements_coordinates(t_build *build ,int i , int j)
 {
-    
+    if(build->map[i][j] == 'E')
+    {
+        build->exit_x = j;
+        build->exit_y = i;
+    }
+    if(build->map[i][j] == 'P')
+    {
+        build->player_x = j;
+        build->player_y = i;
+    }
+    if(build->map[i][j] == 'X')
+    {
+        build->enemy_x = j;
+        build->enemy_y = i;
+    }
 }

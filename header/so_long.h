@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 12:56:17 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:19:06 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int			check_map3(t_build *build);
 int     check_map4(t_build *build);
 void    elements_counter(t_build *build);
 int     check_elements(t_build *build);
+void    saving_elements_coordinates(t_build *build ,int i , int j);
+void    elements_coordinates(t_build *build);
 //utils
 void		ft_putstr_fd(char *s, int fd);
 size_t		ft_strlen(const char *str);

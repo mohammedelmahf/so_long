@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 13:10:03 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:18:39 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,4 +186,28 @@ void    elements_counter(t_build *build)
     }
     build->width = j;
     build->height = i;
+}
+
+void    elements_coordinates(t_build *build)
+{
+    int i;
+    int j;
+
+    i = 0;
+
+    while(build->map[i])
+    {
+        j = 0;
+        while(build->map[i][j])
+        {
+            saving_elements_coordinates(build , i , j);
+            j++;
+        }
+        i++;
+    }
+}
+
+void    saving_elements_coordinates(t_build *build ,int i , int j)
+{
+    
 }

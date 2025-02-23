@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 12:58:35 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:10:03 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,26 @@ int     check_map4(t_build *build)
 int     check_elements(t_build *build)
 {
     elements_counter(build);
-    printf("number of exit = %d\nnumber of coins = %d\nnumber of player = %d\nnumber of enemy = %d\n" , build->exit , build->c , build->player , build->enemy);
+    if(build->c < 1)
+    {
+        ft_putstr_fd("Wrong number of collectibles\n", 1);
+        return(0);
+    }
+    if(build->player != 1)
+    {
+        ft_putstr_fd("Wrong number of players\n", 1);
+        return(0);
+    }
+    if(build->exit != 1)
+    {
+        ft_putstr_fd("Wrong number of exits\n", 1);
+        return(0);
+    }
+    if(build->enemy >= 2)
+    {
+        ft_putstr_fd("Wrong number of enemies\n", 1);
+        return(0);
+    }
     return 1;
 }
 

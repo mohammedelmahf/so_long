@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 12:55:44 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/23 12:58:35 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,6 @@ int     check_map4(t_build *build)
         j = 0;
         while(build->map[i][j])
         {
-            printf("%d" ,build->map[i][j]);
             if(!ft_strchr("10PECX" , build->map[i][j]))
                 return(0);
             j++;
@@ -138,7 +137,7 @@ int     check_map4(t_build *build)
 int     check_elements(t_build *build)
 {
     elements_counter(build);
-    printf("number of exit = %d\n number of coins = %d\n number of player = %d\n number of enemy = %d\n" , build->exit , build->c , build->player , build->enemy);
+    printf("number of exit = %d\nnumber of coins = %d\nnumber of player = %d\nnumber of enemy = %d\n" , build->exit , build->c , build->player , build->enemy);
     return 1;
 }
 

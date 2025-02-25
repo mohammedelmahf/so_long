@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 13:19:06 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:14:48 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 
 #include "get_next_line.h"
+#include "../minilibx-linux/mlx.h"
+#include "mlx.h"
 typedef struct s_build
 {
 	void	*mlx;
@@ -69,4 +71,15 @@ size_t		ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 void		free_array(char **map);
 char	*ft_strchr(const char *s, int c);
+
+
+
+
+
+
+
+
+
+
+void	start_mlx(t_build *build);
 #endif

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 13:23:32 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/23 19:24:40 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ int     check_elements(t_build *build)
         ft_putstr_fd("Wrong number of exits\n", 1);
         return(0);
     }
-    if(build->enemy >= 2)
+    if(build->enemy < 1)
     {
         ft_putstr_fd("Wrong number of enemies\n", 1);
         return(0);

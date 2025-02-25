@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 13:15:16 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/25 10:57:16 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		check_map(t_build *build)
 		return(0);
 	else
 		elements_coordinates(build);
-		return(1);
+	return(1);
 }
 
 void    build_args(t_build *build)

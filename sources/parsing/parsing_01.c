@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/25 10:57:16 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/25 12:21:42 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../../header/so_long.h"
 int     check_ber(char *ber)
 {
     int i;

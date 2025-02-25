@@ -6,8 +6,15 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:04 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/25 12:12:05 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/25 12:22:04 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- 
+#include "../../header/so_long.h"
+ void   draw(t_build *build)
+ {
+    int i;
+    int j;
+
+    register_path(build);
+ }

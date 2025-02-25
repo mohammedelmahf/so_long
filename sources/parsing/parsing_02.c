@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/23 19:24:40 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/25 12:21:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../../header/so_long.h"
 
 char **arg_to_map(char **av)
 {

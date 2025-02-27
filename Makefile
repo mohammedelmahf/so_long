@@ -17,7 +17,8 @@ SRCS    = 	main.c \
 			utils/utils_01.c \
 			utils/ft_strchr.c \
 			sources/parsing/parsing_01.c \
-			sources/parsing/parsing_02.c  
+			sources/parsing/parsing_02.c \
+			sources/so_long_utils/so_long_utils_01.c
 
 OBJS    = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 10:51:30 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:06:00 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,7 +233,7 @@ int     elements_search(char **map , char a)
     i = 0;
     while(map[i])
     {
-        if(ft_strchr(map[i] , a));
+        if(ft_strchr(map[i] , a))
             return(1);
         i++;
     }

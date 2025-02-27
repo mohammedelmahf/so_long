@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 10:55:25 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:01:13 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:06:42 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int destroy_game(t_build *build)
     }
 }
 
-static void	destroy_enemy_ass(t_build *build)
+void	destroy_enemy_ass(t_build *build)
 {
 	mlx_destroy_image(build->mlx, build->enemey_ass_u[0]);
 	mlx_destroy_image(build->mlx, build->enemey_ass_u[1]);
@@ -46,7 +46,7 @@ static void	destroy_enemy_ass(t_build *build)
 	mlx_destroy_image(build->mlx, build->enemey_ass_d[1]);
 }
 
-static void	destroy_player_ass(t_build *build)
+void	destroy_player_ass(t_build *build)
 {
 	mlx_destroy_image(build->mlx, build->player_ass_u[0]);
 	mlx_destroy_image(build->mlx, build->player_ass_u[1]);

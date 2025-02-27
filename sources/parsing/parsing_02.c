@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/25 12:21:50 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 10:51:30 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,4 +224,18 @@ void    saving_elements_coordinates(t_build *build ,int i , int j)
         build->enemy_x = j;
         build->enemy_y = i;
     }
+}
+
+int     elements_search(char **map , char a)
+{
+    int i;
+    
+    i = 0;
+    while(map[i])
+    {
+        if(ft_strchr(map[i] , a));
+            return(1);
+        i++;
+    }
+    return(0);
 }

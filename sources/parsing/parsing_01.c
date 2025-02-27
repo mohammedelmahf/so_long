@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 10:43:06 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 10:53:38 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,13 @@ void	flood_fill(t_build *build)
 {
 	char	**duplicated_map;
 	duplicated_map = copy_map(build);
+	fill(duplicated_map , build->player_x  , build->player_y);
+	if(elements_search(duplicated_map , 'C'))
+	{
+		ft_putstr_fd("Map is invalid\n" , 1);
+		free_array(duplicated_map);
+		destroy_game(build);
+	}
 }
 
 char **copy_map(t_build *build)
@@ -115,4 +122,15 @@ char **copy_map(t_build *build)
 	}
 	map[i] = NULL;
 	return(map);	
+}
+
+void	fill(char **map , int px , int py)
+{
+	if(map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E' || map[py][px] == 'M' )
+		return;
+	map[py][px] == 'M';
+	fill(map , px + 1 , py);
+	fill(map , px - 1 , py);
+	fill(map , px , py + 1);
+	fill(map , px , py - 1); 
 }

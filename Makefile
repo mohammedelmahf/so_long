@@ -16,11 +16,14 @@ SRCS    = 	main.c \
 			utils/ft_split.c \
 			utils/utils_01.c \
 			utils/ft_strchr.c \
+			utils/ft_itoa.c \
+			utils/ft_strjoin.c \
 			sources/mlx_lodaer/mlx_lodaer.c\
 			sources/mlx_path/mlx_path01.c\
 			sources/parsing/parsing_01.c \
 			sources/parsing/parsing_02.c \
-			sources/so_long_utils/so_long_utils_01.c
+			sources/so_long_utils/so_long_utils_01.c \
+			sources/so_long_utils/so_long_utils_02.c
 
 OBJS    = $(SRCS:.c=.o)
 

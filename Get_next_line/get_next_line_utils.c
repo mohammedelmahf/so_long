@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 19:57:12 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/16 13:37:25 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:55:16 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 		str[i + j] = s2[j];
 		j++;
 	}
-	free(s1);
 	str[j + i] = '\0';
+	free(s1);
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:04 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 13:39:47 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:24:55 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
  {
     int i;
     int j;
-
    register_ass_path(build);
    i = 0;
    while(build->map[i])

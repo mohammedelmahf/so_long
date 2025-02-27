@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 10:55:25 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:08:55 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:42:41 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,4 @@ void	destroy_player_ass(t_build *build)
 	mlx_destroy_image(build->mlx, build->player_ass_d[2]);
 	mlx_destroy_image(build->mlx, build->player_ass_d[3]);
 }
+

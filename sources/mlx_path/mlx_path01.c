@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 14:39:00 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:49:52 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void    register_player_ass_u(t_build *build)
     char *path[7];
 
     i = 0;
-    path[0] = "assets/player/playerup/01.xpm";
+    path[0] = "assets/player/playerdown/01.xpm";
     path[1] = "assets/player/playerup/02.xpm";
     path[2] = "assets/player/playerup/03.xpm";
     path[3] = "assets/player/playerup/04.xpm";
@@ -95,7 +95,7 @@ void    register_player_ass_r(t_build *build)
     char *path[7];
 
     i = 0;
-    path[0] = "assets/player/playerright/01.xpm";
+    path[0] = "assets/player/playerdown/01.xpm";
     path[1] = "assets/player/playerright/02.xpm";
     path[2] = "assets/player/playerright/03.xpm";
     path[3] = "assets/player/playerright/04.xpm";
@@ -107,7 +107,6 @@ void    register_player_ass_r(t_build *build)
         build->player_ass_r[i] = mlx_xpm_file_to_image(build->mlx ,path[i] , &w , &h);
         if(!build->player_ass_r[i] || w > 64 || h > 64)
         {
-            printf("w--->%d\nh--->%d\n",w , h);
             ft_putstr_fd("Error registring player right assets !\n",1);
             destroy_game(build);
         }
@@ -123,7 +122,7 @@ void    register_player_ass_l(t_build *build)
     char *path[7];
 
     i = 0;
-    path[0] = "assets/player/playerleft/01.xpm";
+    path[0] = "assets/player/playerdown/01.xpm";
     path[1] = "assets/player/playerleft/02.xpm";
     path[2] = "assets/player/playerleft/03.xpm";
     path[3] = "assets/player/playerleft/04.xpm";
@@ -142,12 +141,32 @@ void    register_player_ass_l(t_build *build)
     }
 }
 
+void    register_player_ass(t_build *build)
+{
+    int i;
+    int h;
+    int w;
+    char *path[1];
+
+    i = 0;
+    path[0] = "assets/player/playerdown/01.xpm";
+    while(i < 1)
+    {
+        build->player_ass[i] = mlx_xpm_file_to_image(build->mlx ,path[i] , &w , &h);
+        if(!build->player_ass[i] || w > 64 || h > 64)
+        {
+            ft_putstr_fd("Error registring player assets !\n",1);
+            destroy_game(build);
+        }
+        i++;
+    }
+}
 void    register_ass_path(t_build *build)
 {
     register_map_ass(build);
+    register_player_ass(build);
     register_player_ass_u(build);
-    register_player_ass_d(build);
+    register_player_ass_r(build);
     register_player_ass_l(build);
-    // register_player_ass_r(build);
-
+    register_player_ass_d(build);
 }

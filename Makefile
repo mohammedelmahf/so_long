@@ -1,6 +1,6 @@
 NAME    = so_long
 CC      = cc
-FLAGS   = -Wall -Wextra -Werror -fPIE
+FLAGS   = -Wall -Wextra -g #-Werror -fPIE
 RM      = rm -f
 
 # Path to MiniLibX
@@ -16,7 +16,7 @@ SRCS    = 	main.c \
 			utils/ft_split.c \
 			utils/utils_01.c \
 			utils/ft_strchr.c \
-			utils/ft_itoa.c \
+			utils/itoa.c \
 			utils/ft_strjoin.c \
 			sources/mlx_lodaer/mlx_lodaer.c\
 			sources/mlx_path/mlx_path01.c\

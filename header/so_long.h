@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 14:56:55 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:52:47 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <mlx.h>
 # include <X11/X.h>
 # include <X11/keysym.h> 
+# include <sys/time.h>
 typedef struct s_build
 {
 	void	*mlx;
@@ -28,10 +29,11 @@ typedef struct s_build
 	int		player_x;
 	int		player_y;
 	char	player_direction;
-	void	*player_ass_u[4];
-	void	*player_ass_l[4];
-	void	*player_ass_r[4];
-	void	*player_ass_d[4];
+	void	*player_ass[7];
+	void	*player_ass_u[7];
+	void	*player_ass_l[7];
+	void	*player_ass_r[7];
+	void	*player_ass_d[7];
 	int		player_moves;
 	int		c;
 	void	*c_ass[6];
@@ -92,6 +94,23 @@ void	move_to_position(t_build *build, int x, int y);
 void	move_player(t_build *build, int x, int y);
 int	event_handler(int key, t_build *build);
 void	print_moves(t_build *build);
+int	render_map(t_build *build);
+void	draw_ass_animated(t_build *build);
+void	load_animation(t_build *build, int x, int y);
+void	animate_player(t_build *build, int x, int y);
+int	p_frames_calculator(void);
+long long	current_time_in_ms(void);
+
+
+
+
+
+
+void    register_player_ass_d(t_build *build);
+void    register_player_ass_u(t_build *build);
+void    register_player_ass(t_build *build);
+void    register_player_ass_l(t_build *build);
+void    register_player_ass_r(t_build *build);
 
 
 
@@ -99,6 +118,5 @@ void	print_moves(t_build *build);
 
 
 void print_map(void *map, int height);
-
 void	start_mlx(t_build *build);
 #endif

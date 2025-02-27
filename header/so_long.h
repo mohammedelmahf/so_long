@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 10:52:05 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:03:39 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,16 @@ int     check_elements(t_build *build);
 void    saving_elements_coordinates(t_build *build ,int i , int j);
 void    elements_coordinates(t_build *build);
 int     elements_search(char **map , char a);
+void	fill(char **map , int px , int py);
+char **copy_map(t_build *build);
 //utils
 void		ft_putstr_fd(char *s, int fd);
 size_t		ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 void		free_array(char **map);
 char	*ft_strchr(const char *s, int c);
-
-
-
+//so_long_utils
+int destroy_game(t_build *build);
 
 
 

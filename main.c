@@ -15,8 +15,9 @@
 void	start_mlx(t_build *build)
 {
 	build->mlx = mlx_init();
-	build->win = mlx_new_window(build->mlx, build->width * 32, (build->height + 1)
-			* 32, "so_long");
+	build->win = mlx_new_window(build->mlx, build->width * 64, (build->height + 1)
+			* 64, "so_long");
+    mlx_loop(build->mlx);
 }
 
 int main(int ac , char **av)

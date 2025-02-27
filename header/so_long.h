@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/25 11:14:48 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 10:12:21 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 
 #include "get_next_line.h"
-#include "../minilibx-linux/mlx.h"
-#include "mlx.h"
+# include <mlx.h>
+# include <X11/X.h>
+# include <X11/keysym.h> 
 typedef struct s_build
 {
 	void	*mlx;

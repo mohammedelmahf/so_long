@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/25 12:21:42 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 10:26:43 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		check_map(t_build *build)
 		return(0);
 	else
 		elements_coordinates(build);
+	flood_fill(build);
 	return(1);
 }
 
@@ -89,4 +90,16 @@ void    build_args(t_build *build)
 	build->enemy_direction = 'l';
 	build->width = 0;
 	build->height = 0;
+}
+
+
+void	flood_fill(t_build *build)
+{
+	char	**duplicated_map;
+	duplicated_map = copy_map(build);
+}
+
+char **copy_map(t_build *build)
+{
+	
 }

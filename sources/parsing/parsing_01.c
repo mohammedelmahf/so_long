@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:32:13 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:33:03 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ void	flood_fill(t_build *build)
 {
 	char	**duplicated_map;
 	duplicated_map = copy_map(build);
-	print_map(duplicated_map, build->height);
 	fill(duplicated_map , build->player_x  , build->player_y);
 	if(elements_search(duplicated_map , 'C'))
 	{

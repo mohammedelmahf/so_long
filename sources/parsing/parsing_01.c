@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:34:28 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:37:36 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,21 +97,21 @@ void	flood_fill(t_build *build)
 {
 	char	**duplicated_map;
 	duplicated_map = copy_map(build);
-	// fill(duplicated_map , build->player_x  , build->player_y);
-	// if(elements_search(duplicated_map , 'C'))
-	// {
-	// 	ft_putstr_fd("Map is invalid\n" , 1);
-	// 	free_array(duplicated_map);
-	// 	destroy_game(build);
-	// }
-	// duplicated_map[build->player_y][build->player_x] = 'P';
-	// _fill(duplicated_map , build->player_x , build->player_y);
-	// if(elements_search(duplicated_map , 'E'))
-	// {
-	// 	ft_putstr_fd("Map is invalid\n" , 1);
-	// 	free_array(duplicated_map);
-	// 	destroy_game(build);
-	// }
+	fill_M(duplicated_map , build->player_x  , build->player_y);
+	if(elements_search(duplicated_map , 'C'))
+	{
+		ft_putstr_fd("Map is invalid\n" , 1);
+		free_array(duplicated_map);
+		destroy_game(build);
+	}
+	duplicated_map[build->player_y][build->player_x] = 'P';
+	fill_V(duplicated_map , build->player_x , build->player_y);
+	if(elements_search(duplicated_map , 'E'))
+	{
+		ft_putstr_fd("Map is invalid\n" , 1);
+		free_array(duplicated_map);
+		destroy_game(build);
+	}
 	free_array(duplicated_map);
 }
 
@@ -139,10 +139,10 @@ void	fill_M(char **map , int px , int py)
 	if(map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E' || map[py][px] == 'M' )
 		return;
 	map[py][px] = 'M';
-	fill(map , px + 1 , py);
-	fill(map , px - 1 , py);
-	fill(map , px , py + 1);
-	fill(map , px , py - 1); 
+	fill_M(map , px + 1 , py);
+	fill_M(map , px - 1 , py);
+	fill_M(map , px , py + 1);
+	fill_M(map , px , py - 1); 
 }
 
 void	fill_V(char **map, int px, int py)
@@ -150,10 +150,10 @@ void	fill_V(char **map, int px, int py)
 	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'V')
 		return ;
 	map[py][px] = 'V';
-	_fill(map, px + 1, py);
-	_fill(map, px - 1, py);
-	_fill(map, px, py + 1);
-	_fill(map, px, py - 1);
+	fill_V(map, px + 1, py);
+	fill_V(map, px - 1, py);
+	fill_V(map, px, py + 1);
+	fill_V(map, px, py - 1);
 }
 
 

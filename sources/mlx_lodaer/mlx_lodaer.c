@@ -6,12 +6,12 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:04 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/25 12:22:04 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:39:22 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/so_long.h"
- void   draw(t_build *build)
+ void   draw_ass(t_build *build)
  {
     int i;
     int j;

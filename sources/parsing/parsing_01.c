@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:25:29 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:32:13 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,13 +98,22 @@ void	flood_fill(t_build *build)
 	char	**duplicated_map;
 	duplicated_map = copy_map(build);
 	print_map(duplicated_map, build->height);
-	fill(duplicated_map , build->player_x  , build->player_y , build);
+	fill(duplicated_map , build->player_x  , build->player_y);
 	if(elements_search(duplicated_map , 'C'))
 	{
 		ft_putstr_fd("Map is invalid\n" , 1);
 		free_array(duplicated_map);
 		destroy_game(build);
 	}
+	duplicated_map[build->player_y][build->player_x] = 'P';
+	_fill(duplicated_map , build->player_x , build->player_y);
+	if(elements_search(duplicated_map , 'E'))
+	{
+		ft_putstr_fd("Map is invalid\n" , 1);
+		free_array(duplicated_map);
+		destroy_game(build);
+	}
+	free_array(duplicated_map);
 }
 
 char **copy_map(t_build *build)
@@ -126,15 +135,26 @@ char **copy_map(t_build *build)
 	return(map);	
 }
 
-void	fill(char **map , int px , int py , t_build *build)
+void	fill_M(char **map , int px , int py)
 {
 	if(map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E' || map[py][px] == 'M' )
 		return;
 	map[py][px] = 'M';
-	fill(map , px + 1 , py , build);
-	fill(map , px - 1 , py ,build);
-	fill(map , px , py + 1 , build);
-	fill(map , px , py - 1, build); 
+	fill(map , px + 1 , py);
+	fill(map , px - 1 , py);
+	fill(map , px , py + 1);
+	fill(map , px , py - 1); 
+}
+
+void	fill_V(char **map, int px, int py)
+{
+	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'V')
+		return ;
+	map[py][px] = 'V';
+	_fill(map, px + 1, py);
+	_fill(map, px - 1, py);
+	_fill(map, px, py + 1);
+	_fill(map, px, py - 1);
 }
 
 

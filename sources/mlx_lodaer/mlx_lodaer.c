@@ -6,15 +6,15 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:04 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:40:25 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:55:20 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/so_long.h"
  void   draw_ass(t_build *build)
  {
-    int i;
-    int j;
+   //  int i;
+   //  int j;
 
-    register_map_path(build);
+    register_ass_path(build);
  }

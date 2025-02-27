@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 10:26:43 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 10:43:06 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,18 @@ void	flood_fill(t_build *build)
 
 char **copy_map(t_build *build)
 {
-	
+	char **map;
+	int i;
+
+	i = 0;
+	while(build->map[i])
+		i++;
+	map = malloc(sizeof(char *) * (i + 1));
+	while(build->map[i])
+	{
+		map[i] = ft_strdup_gnl(build->map[i]);
+		i++;
+	}
+	map[i] = NULL;
+	return(map);	
 }

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 10:55:25 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:06:42 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:08:55 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,12 @@ int destroy_game(t_build *build)
             destroy_player_ass(build);
             destroy_enemy_ass(build);
         }
+        mlx_destroy_display(build->mlx);
+        free(build->mlx);
     }
+    free_array(build->map);
+    exit(0);
+    return(0);
 }
 
 void	destroy_enemy_ass(t_build *build)

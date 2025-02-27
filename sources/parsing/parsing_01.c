@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:05:52 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:25:29 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ void	flood_fill(t_build *build)
 {
 	char	**duplicated_map;
 	duplicated_map = copy_map(build);
-	fill(duplicated_map , build->player_x  , build->player_y);
+	print_map(duplicated_map, build->height);
+	fill(duplicated_map , build->player_x  , build->player_y , build);
 	if(elements_search(duplicated_map , 'C'))
 	{
 		ft_putstr_fd("Map is invalid\n" , 1);
@@ -115,6 +116,7 @@ char **copy_map(t_build *build)
 	while(build->map[i])
 		i++;
 	map = malloc(sizeof(char *) * (i + 1));
+	i= 0;
 	while(build->map[i])
 	{
 		map[i] = ft_strdup_gnl(build->map[i]);
@@ -124,13 +126,24 @@ char **copy_map(t_build *build)
 	return(map);	
 }
 
-void	fill(char **map , int px , int py)
+void	fill(char **map , int px , int py , t_build *build)
 {
 	if(map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E' || map[py][px] == 'M' )
 		return;
 	map[py][px] = 'M';
-	fill(map , px + 1 , py);
-	fill(map , px - 1 , py);
-	fill(map , px , py + 1);
-	fill(map , px , py - 1); 
+	fill(map , px + 1 , py , build);
+	fill(map , px - 1 , py ,build);
+	fill(map , px , py + 1 , build);
+	fill(map , px , py - 1, build); 
 }
+
+
+// void print_map(char **map, int height)
+// {
+//     int i = 0;
+//     while (i < height)
+//     {
+//         printf("%s\n", map[i]);
+//         i++;
+//     }
+// }

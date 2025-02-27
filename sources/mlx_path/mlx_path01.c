@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 12:00:50 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:11:07 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void    register_map_ass(t_build *build)
 
     i = -1;
     path[0] = "assets/map/wall.xpm";
-    path[0] = "assets/map/floor.xpm";
+    path[1] = "assets/map/floor.xpm";
     while(++i < 2)
     {
-        print_map(build);
         build->map_ass[i] = mlx_xpm_file_to_image(build->mlx , path[i] , &w , &h);
+        printf("Loading image from path: %s\n", path[i]);
         if(!build->map_ass[i] || w > 64 || h > 64)
         {
-            printf("w--->%d\nh--->%d\n", w , h);
             ft_putstr_fd("Error registring map assets !\n" , 1);
             destroy_game(build);
+            return;
         }
     }
 }

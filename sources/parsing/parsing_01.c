@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:37:36 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:03:54 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,7 @@ void	fill_V(char **map, int px, int py)
 }
 
 
-// void print_map(char **map, int height)
+// void print_map(char *map, int height)
 // {
 //     int i = 0;
 //     while (i < height)

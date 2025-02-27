@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:57:12 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:26:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ char	*ft_strchr(const char *s, int c);
 //mlx_lodaer
  void   draw_ass(t_build *build);
 void    register_map_ass(t_build *build);
+void  ass_to_window(t_build *build , int x , int y);
 void    register_ass_path(t_build *build);
 //so_long_utils
 int destroy_game(t_build *build);
@@ -91,7 +92,7 @@ int destroy_game(t_build *build);
 
 
 
-void print_map(char **map, int height);
+void print_map(void *map, int height);
 
 void	start_mlx(t_build *build);
 #endif

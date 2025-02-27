@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:04 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:39:22 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:40:25 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
     int i;
     int j;
 
-    register_path(build);
+    register_map_path(build);
  }

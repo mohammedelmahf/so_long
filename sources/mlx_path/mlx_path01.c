@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 16:49:52 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:50:32 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void    register_player_ass_u(t_build *build)
     char *path[7];
 
     i = 0;
-    path[0] = "assets/player/playerdown/01.xpm";
+    path[0] = "assets/player/playerup/01.xpm";
     path[1] = "assets/player/playerup/02.xpm";
     path[2] = "assets/player/playerup/03.xpm";
     path[3] = "assets/player/playerup/04.xpm";
@@ -95,7 +95,7 @@ void    register_player_ass_r(t_build *build)
     char *path[7];
 
     i = 0;
-    path[0] = "assets/player/playerdown/01.xpm";
+    path[0] = "assets/player/playerright/01.xpm";
     path[1] = "assets/player/playerright/02.xpm";
     path[2] = "assets/player/playerright/03.xpm";
     path[3] = "assets/player/playerright/04.xpm";
@@ -122,7 +122,7 @@ void    register_player_ass_l(t_build *build)
     char *path[7];
 
     i = 0;
-    path[0] = "assets/player/playerdown/01.xpm";
+    path[0] = "assets/player/playerleft/01.xpm";
     path[1] = "assets/player/playerleft/02.xpm";
     path[2] = "assets/player/playerleft/03.xpm";
     path[3] = "assets/player/playerleft/04.xpm";

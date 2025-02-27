@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 17:02:35 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:25:46 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,11 @@ int	event_handler(int key, t_build *build)
 		move_player(build, 0, 1);
 	else if (key == 100 || key == 65363)
 		move_player(build, 1, 0);
-	else
-		move_player(build , 0 , 0);
 	return (1);
 }
 
 void	move_player(t_build *build, int x, int y)
 {
-	printf("x-->%d\ny-->%d\n" , x , y);
 	if (build->player_x + x < build->width - 1 && build->player_y
 		+ y < build->height - 1 && build->player_y + y > 0 && build->player_x
 		+ x > 0)
@@ -71,8 +68,8 @@ void	move_to_position(t_build *build, int x, int y)
 		build->player_direction = 'd';
 	else if (y == -1)
 		build->player_direction = 'u';
-	else if(x == 0 || y == 0)
-		build->player_direction = 'N';
+	// else if(x == 0 || y == 0)
+	// 	build->player_direction = 'N';
 	build->map[build->player_y][build->player_x] = '0';
 	build->player_x += x;
 	build->player_y += y;
@@ -162,7 +159,7 @@ void	animate_player(t_build *build, int x, int y)
 		mlx_put_image_to_window(build->mlx, build->win, build->player_ass_u[i], y
 			* 64, x * 64);
 	else if(build->player_direction == 'd')
-		mlx_put_image_to_window(build->mlx, build->win, build->player_ass[i], y
+		mlx_put_image_to_window(build->mlx, build->win, build->player_ass_d[i], y
 			* 64, x * 64);
 	else
 		mlx_put_image_to_window(build->mlx, build->win, build->player_ass[i], y
@@ -170,7 +167,7 @@ void	animate_player(t_build *build, int x, int y)
 	if (p_frames_calculator())
 	{
 		i++;
-		if (i >= 7)
+		if (i >= 6)
 			i = 0;
 	}
 }

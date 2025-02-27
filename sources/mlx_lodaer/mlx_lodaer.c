@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:04 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 16:49:22 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:32:54 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void  ass_to_window(t_build *build , int x , int y)
 {
    if (build->map[x][y] == '0')
 	   mlx_put_image_to_window(build->mlx, build->win, build->map_ass[1], y * 64,
-		x * 64);
-	else if (build->map[x][y] == '1')
+		   x * 64);
+	if (build->map[x][y] == '1')
 		mlx_put_image_to_window(build->mlx, build->win, build->map_ass[0], y * 64,
 			x * 64);
    else if (build->map[x][y] == 'P')

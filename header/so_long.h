@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 16:52:47 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:58:26 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c);
 void		free_array(char **map);
 char	*ft_strchr(const char *s, int c);
 char	*ft_itoa(int n);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 //mlx_lodaer
  void   draw_ass(t_build *build);
 void    register_map_ass(t_build *build);
@@ -113,7 +113,7 @@ void    register_player_ass_l(t_build *build);
 void    register_player_ass_r(t_build *build);
 
 
-
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 
 

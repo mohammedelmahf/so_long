@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 19:25:46 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 20:57:51 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	event_handler(int key, t_build *build)
 {
 	if (key == 65307)
 	{
+		printf("%d\n" , key);
 		destroy_game(build);
 	}
 	else if (key == 119 || key == 65362)
@@ -68,34 +69,33 @@ void	move_to_position(t_build *build, int x, int y)
 		build->player_direction = 'd';
 	else if (y == -1)
 		build->player_direction = 'u';
-	// else if(x == 0 || y == 0)
-	// 	build->player_direction = 'N';
+	else if(x == 0 || y == 0)
+		build->player_direction = 'd';
 	build->map[build->player_y][build->player_x] = '0';
 	build->player_x += x;
 	build->player_y += y;
 	build->map[build->player_y][build->player_x] = 'P';
-	// print_moves(build);
+	print_moves(build);
 }
 
-// void	print_moves(t_build *build)
-// {
-// 	char	*moves;
-// 	char	*tmp;
-
-// 	tmp = ft_itoa(build->player_moves);
-// 	moves = ft_strjoin("Moves : ", tmp);
-// 	free(tmp);
-// 	mlx_string_put(build->mlx, build->win, 0, (build->height + 0.5) * 64,
-// 		0x00000000, moves);
-// 	free(moves);
-// 	(build->player_moves)++;
-// 	tmp = ft_itoa(build->player_moves);
-// 	moves = ft_strjoin("Moves : ", tmp);
-// 	free(tmp);
-// 	mlx_string_put(build->mlx, build->win, 0, (build->height + 0.5) * 64,
-// 		0x00FFFFFF, moves);
-// 	free(moves);
-// }
+void	print_moves(t_build *build)
+{
+	char	*moves;
+	char	*tmp;
+	tmp = ft_itoa(build->player_moves);
+	moves = ft_strjoin("Moves : ", tmp);
+	free(tmp);
+	mlx_string_put(build->mlx, build->win, 0, (build->height + 0.5) * 64,
+		0x00000000, moves);
+	free(moves);
+	(build->player_moves)++;
+	tmp = ft_itoa(build->player_moves);
+	moves = ft_strjoin("Moves : ", tmp);
+	free(tmp);
+	mlx_string_put(build->mlx, build->win, 0, (build->height + 0.5) * 64,
+		0x00FFFFFF, moves);
+	free(moves);
+}
 
 
 int	render_map(t_build *build)
@@ -135,9 +135,9 @@ void	load_animation(t_build *build, int x, int y)
 			x * 64);
 	else if (build->map[x][y] == 'P')
 		animate_player(build, x, y);
-	// else if (build->map[x][y] == 'E')
-	// 	mlx_put_image_to_window(build->mlx, build->win, build->exit_ass, y * 32, x
-	// 		* 32);
+	else if (build->map[x][y] == 'E')
+		mlx_put_image_to_window(build->mlx, build->win, build->exit_ass, y * 64, x
+			* 64);
 	// else if (build->map[x][y] == 'C')
 	// 	animate_c(build, x, y);
 	// else if (build->map[x][y] == 'X')

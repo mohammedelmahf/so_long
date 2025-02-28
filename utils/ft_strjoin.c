@@ -6,41 +6,42 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:56:04 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 14:58:59 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:57:57 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/so_long.h"
 
-char *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    int i = 0;
-    int j = 0;
-    char *str;
+	char	*join;
+	size_t	len1;
+	size_t	len2;
 
-    if (!s1 || !s2)
-        return (NULL);
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	join = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+	if (!join)
+		return (NULL);
+	ft_memcpy(join, s1, len1);
+	ft_memcpy((join + len1), s2, len2);
+	join[len1 + len2] = '\0';
+	return (join);
+}
 
-    str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-    if (!str)
-        return (NULL);
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
 
-    while (s1[i])
-    {
-        str[i] = s1[i];
-        i++;
-    }
-    while (s2[j])
-    {
-        str[i + j] = s2[j];
-        j++;
-    }
-
-    str[i + j] = '\0';
-
-    // Avoid freeing s1 if it was not dynamically allocated or has been freed before
-    if (s1)
-        free(s1);
-
-    return (str);
+	i = 0;
+	if (!dest && !src)
+		return (NULL);
+	while (n > i)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dest);
 }

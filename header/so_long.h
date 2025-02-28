@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 19:58:26 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/28 10:45:00 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,10 @@ void    register_player_ass_u(t_build *build);
 void    register_player_ass(t_build *build);
 void    register_player_ass_l(t_build *build);
 void    register_player_ass_r(t_build *build);
+void    register_player_c_ass(t_build *build);
 
-
+int	c_frames_calculator(void);
+void	animate_c(t_build *build, int x, int y);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 

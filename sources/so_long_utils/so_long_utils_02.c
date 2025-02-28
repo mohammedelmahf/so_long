@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 20:57:51 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/28 10:48:06 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	event_handler(int key, t_build *build)
 {
 	if (key == 65307)
 	{
-		printf("%d\n" , key);
 		destroy_game(build);
 	}
 	else if (key == 119 || key == 65362)
@@ -69,8 +68,6 @@ void	move_to_position(t_build *build, int x, int y)
 		build->player_direction = 'd';
 	else if (y == -1)
 		build->player_direction = 'u';
-	else if(x == 0 || y == 0)
-		build->player_direction = 'd';
 	build->map[build->player_y][build->player_x] = '0';
 	build->player_x += x;
 	build->player_y += y;
@@ -135,11 +132,14 @@ void	load_animation(t_build *build, int x, int y)
 			x * 64);
 	else if (build->map[x][y] == 'P')
 		animate_player(build, x, y);
-	else if (build->map[x][y] == 'E')
-		mlx_put_image_to_window(build->mlx, build->win, build->exit_ass, y * 64, x
-			* 64);
-	// else if (build->map[x][y] == 'C')
-	// 	animate_c(build, x, y);
+	// else if (build->map[x][y] == 'E')
+	// {
+	// 	printf("here\n");
+	// 	mlx_put_image_to_window(build->mlx, build->win, build->exit_ass, y * 64, x
+	// 		* 64);
+	// }
+	else if (build->map[x][y] == 'C')
+		animate_c(build, x, y);
 	// else if (build->map[x][y] == 'X')
 	// 	animate_enemy(build, x, y);
 }
@@ -162,8 +162,8 @@ void	animate_player(t_build *build, int x, int y)
 		mlx_put_image_to_window(build->mlx, build->win, build->player_ass_d[i], y
 			* 64, x * 64);
 	else
-		mlx_put_image_to_window(build->mlx, build->win, build->player_ass[i], y
-			* 64, x * 64);
+		mlx_put_image_to_window(build->mlx, build->win, build->player_ass_d[0], y
+		* 64, x * 64);
 	if (p_frames_calculator())
 	{
 		i++;
@@ -193,4 +193,34 @@ long long	current_time_in_ms(void)
 	gettimeofday(&te, NULL);
 	milliseconds = te.tv_sec * 1000LL + te.tv_usec / 1000;
 	return (milliseconds);
+}
+
+void	animate_c(t_build *build, int x, int y)
+{
+	static int	i;
+
+	mlx_put_image_to_window(build->mlx, build->win, build->map_ass[1], y * 64, x
+		* 64);
+	mlx_put_image_to_window(build->mlx, build->win, build->c_ass[i], y * 64, x
+		* 64);
+	if (c_frames_calculator())
+	{
+		i++;
+		if (i >= 4)
+			i = 0;
+	}
+}
+
+int	c_frames_calculator(void)
+{
+	static long long	last_time;
+	long long			current_time;
+
+	current_time = current_time_in_ms();
+	if (current_time - last_time >= 150)
+	{
+		last_time = current_time;
+		return (1);
+	}
+	return (0);
 }

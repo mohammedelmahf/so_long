@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/28 10:33:56 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:35:40 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,27 @@ void    register_player_c_ass(t_build *build)
     }
 }
 
+void    register_enemy_ass_d(t_build *build)
+{
+    int i;
+    int w;
+    int h;
+    char *path[1];
+    
+    i = 0;
+    path[0] = "assets/enemy/01.xpm";
+
+    while(i < 1)
+    {
+        build->enemey_ass_d[i] = mlx_xpm_file_to_image(build->mlx , path[i] , &w , &h);
+        if(!build->enemey_ass_d[i] || w > 64 || h > 64)
+        {
+            ft_putstr_fd("Error registring enemy assets !\n" , 1);
+            destroy_game(build);
+        }
+    }
+}
+
 void    register_ass_path(t_build *build)
 {
     register_map_ass(build);
@@ -197,4 +218,5 @@ void    register_ass_path(t_build *build)
     register_player_ass_l(build);
     register_player_ass_d(build);
     register_player_c_ass(build);
+    register_enemy_ass_d(build);
 }

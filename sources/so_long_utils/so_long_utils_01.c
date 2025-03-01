@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 10:55:25 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/28 20:32:32 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:36:06 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int destroy_game(t_build *build)
 			mlx_destroy_image(build->mlx, build->c_ass[3]);
 			mlx_destroy_image(build->mlx, build->c_ass[4]);
             destroy_player_ass(build);
-            // destroy_enemy_ass(build);
+            destroy_enemy_ass(build);
         }
         mlx_destroy_display(build->mlx);
         free(build->mlx);
@@ -39,17 +39,17 @@ int destroy_game(t_build *build)
 }
 
 
-// void	destroy_enemy_ass(t_build *build)
-// {
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_u[0]);
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_u[1]);
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_l[0]);
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_l[1]);
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_r[0]);
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_r[1]);
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_d[0]);
-// 	mlx_destroy_image(build->mlx, build->enemey_ass_d[1]);
-// }
+void	destroy_enemy_ass(t_build *build)
+{
+	// mlx_destroy_image(build->mlx, build->enemey_ass_u[0]);
+	// mlx_destroy_image(build->mlx, build->enemey_ass_u[1]);
+	// mlx_destroy_image(build->mlx, build->enemey_ass_l[0]);
+	// mlx_destroy_image(build->mlx, build->enemey_ass_l[1]);
+	// mlx_destroy_image(build->mlx, build->enemey_ass_r[0]);
+	// mlx_destroy_image(build->mlx, build->enemey_ass_r[1]);
+	mlx_destroy_image(build->mlx, build->enemey_ass_d[0]);
+	// mlx_destroy_image(build->mlx, build->enemey_ass_d[1]);
+}
 
 void	destroy_player_ass(t_build *build)
 {

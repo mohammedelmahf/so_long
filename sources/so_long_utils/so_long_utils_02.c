@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 11:40:41 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:49:22 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ void	print_moves(t_build *build)
 
 int	render_map(t_build *build)
 {
-	if (m_frames_calculator())
-		move_enemy(build);
+	// if (m_frames_calculator())
+	// 	move_enemy(build);
 	draw_ass_animated(build);
 	return (0);
 }
@@ -140,8 +140,8 @@ void	load_animation(t_build *build, int x, int y)
 	// }
 	else if (build->map[x][y] == 'C')
 		animate_c(build, x, y);
-	// else if (build->map[x][y] == 'X')
-	// 	animate_enemy(build, x, y);
+	else if (build->map[x][y] == 'X')
+		animate_enemy(build, x, y);
 }
 void	animate_player(t_build *build, int x, int y)
 {
@@ -170,6 +170,46 @@ void	animate_player(t_build *build, int x, int y)
 		if (i >= 6)
 			i = 0;
 	}
+}
+
+void	animate_enemy(t_build *build, int x, int y)
+{
+	static int	i;
+
+	mlx_put_image_to_window(build->mlx, build->win, build->map_ass[1], y * 64, x
+		* 64);
+	if (build->enemy_direction == 'r')
+		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_r[i], y
+			* 64, x * 64);
+	else if (build->enemy_direction == 'l')
+		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_l[i], y
+			* 64, x * 64);
+	else if (build->enemy_direction == 'u')
+		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_u[i], y
+			* 64, x * 64);
+	else
+		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_d[i], y
+			* 64, x * 64);
+	if (x_frames_calculator())
+	{
+		i++;
+		if (i >= 2)
+			i = 0;
+	}
+}
+
+int	x_frames_calculator(void)
+{
+	static long long	last_time;
+	long long			current_time;
+
+	current_time = current_time_in_ms();
+	if (current_time - last_time >= 100)
+	{
+		last_time = current_time;
+		return (1);
+	}
+	return (0);
 }
 
 int	p_frames_calculator(void)

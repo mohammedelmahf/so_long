@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 11:35:40 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 12:03:30 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,12 +200,14 @@ void    register_enemy_ass_d(t_build *build)
 
     while(i < 1)
     {
+        printf("here\n");
         build->enemey_ass_d[i] = mlx_xpm_file_to_image(build->mlx , path[i] , &w , &h);
         if(!build->enemey_ass_d[i] || w > 64 || h > 64)
         {
             ft_putstr_fd("Error registring enemy assets !\n" , 1);
             destroy_game(build);
         }
+        i++;
     }
 }
 

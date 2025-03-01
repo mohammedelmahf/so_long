@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 11:49:22 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 12:18:53 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ void	print_moves(t_build *build)
 
 int	render_map(t_build *build)
 {
-	// if (m_frames_calculator())
-	// 	move_enemy(build);
+	if (m_frames_calculator())
+		move_enemy(build);
 	draw_ass_animated(build);
 	return (0);
 }
@@ -134,7 +134,6 @@ void	load_animation(t_build *build, int x, int y)
 		animate_player(build, x, y);
 	// else if (build->map[x][y] == 'E')
 	// {
-	// 	printf("here\n");
 	// 	mlx_put_image_to_window(build->mlx, build->win, build->exit_ass, y * 64, x
 	// 		* 64);
 	// }
@@ -193,7 +192,7 @@ void	animate_enemy(t_build *build, int x, int y)
 	if (x_frames_calculator())
 	{
 		i++;
-		if (i >= 2)
+		if (i >= 1)
 			i = 0;
 	}
 }

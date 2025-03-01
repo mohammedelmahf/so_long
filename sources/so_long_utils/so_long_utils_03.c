@@ -31,7 +31,8 @@ void	move_enemy(t_build *build)
 	distance_y = build->player_y - build->enemy_y;
 	if (abs(distance_x) > abs(distance_y))
 	{
-		if (distance_x > 0 && !is_wall(build->enemy_x + 1, build->enemy_y, build))
+		if (distance_x > 0 && !is_wall(build->enemy_x + 1, build->enemy_y,
+				build))
 			apply_enemy_move(build, build->enemy_x + 1, build->enemy_y);
 		else if (distance_x < 0 && !is_wall(build->enemy_x - 1, build->enemy_y,
 				build))
@@ -39,7 +40,8 @@ void	move_enemy(t_build *build)
 	}
 	else
 	{
-		if (distance_y > 0 && !is_wall(build->enemy_x, build->enemy_y + 1, build))
+		if (distance_y > 0 && !is_wall(build->enemy_x, build->enemy_y + 1,
+				build))
 			apply_enemy_move(build, build->enemy_x, build->enemy_y + 1);
 		else if (distance_y < 0 && !is_wall(build->enemy_x, build->enemy_y - 1,
 				build))

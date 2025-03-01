@@ -11,14 +11,15 @@
 /* ************************************************************************** */
 
 #include "../../header/so_long.h"
-int     check_ber(char *ber)
-{
-    int i;
-    i = ft_strlen(ber) - 1;
 
-    if(i < 3)
-        return(0);
-    if (ber[i] != 'r')
+int	check_ber(char *ber)
+{
+	int	i;
+
+	i = ft_strlen(ber) - 1;
+	if (i < 3)
+		return (0);
+	if (ber[i] != 'r')
 		return (0);
 	if (ber[i - 1] != 'e')
 		return (0);
@@ -29,51 +30,51 @@ int     check_ber(char *ber)
 	return (1);
 }
 
-int     check_args(int ac , char **av)
+int	check_args(int ac, char **av)
 {
-    if(ac != 2)
-    {
-        ft_putstr_fd("Error : Worng  number of arguments\n" , 1);
-        ft_putstr_fd("Usage : ./so_long [map.ber]\n" , 1);
-        return(0);
-    }
-    if(!check_ber(av[1]))
-    {
-        ft_putstr_fd("Error : Wrong file extension\n",1);
-        return(0);
-    }
-    if(open(av[1] , O_RDONLY) == -1)
-    {
-        perror("Error");
-        return(0);
-    }
-    return(1);
+	if (ac != 2)
+	{
+		ft_putstr_fd("Error : Worng  number of arguments\n", 1);
+		ft_putstr_fd("Usage : ./so_long [map.ber]\n", 1);
+		return (0);
+	}
+	if (!check_ber(av[1]))
+	{
+		ft_putstr_fd("Error : Wrong file extension\n", 1);
+		return (0);
+	}
+	if (open(av[1], O_RDONLY) == -1)
+	{
+		perror("Error");
+		return (0);
+	}
+	return (1);
 }
 
-int		check_map(t_build *build)
+int	check_map(t_build *build)
 {
-	if(!build->map)
-		return(0);
-	if(!check_map1(build))
-		return(0);
-	if(!check_map2(build))
-		return(0);
-	if(!check_map3(build))
-		return(0);
-	if(!check_map4(build))
-		return(0);
-	if(!check_elements(build))
-		return(0);
+	if (!build->map)
+		return (0);
+	if (!check_map1(build))
+		return (0);
+	if (!check_map2(build))
+		return (0);
+	if (!check_map3(build))
+		return (0);
+	if (!check_map4(build))
+		return (0);
+	if (!check_elements(build))
+		return (0);
 	else
 		elements_coordinates(build);
 	flood_fill(build);
-	return(1);
+	return (1);
 }
 
-void    build_args(t_build *build)
+void	build_args(t_build *build)
 {
 	if (!build)
-		return;
+		return ;
 	build->map = NULL;
 	build->player = 0;
 	build->player_x = 0;
@@ -92,57 +93,58 @@ void    build_args(t_build *build)
 	build->height = 0;
 }
 
-
 void	flood_fill(t_build *build)
 {
 	char	**duplicated_map;
+
 	duplicated_map = copy_map(build);
-	fill_M(duplicated_map , build->player_x  , build->player_y);
-	if(elements_search(duplicated_map , 'C'))
+	fill_M(duplicated_map, build->player_x, build->player_y);
+	if (elements_search(duplicated_map, 'C'))
 	{
-		ft_putstr_fd("Map is invalid\n" , 1);
+		ft_putstr_fd("Map is invalid\n", 1);
 		free_array(duplicated_map);
 		destroy_game(build);
 	}
 	duplicated_map[build->player_y][build->player_x] = 'P';
-	fill_V(duplicated_map , build->player_x , build->player_y);
-	if(elements_search(duplicated_map , 'E'))
+	fill_V(duplicated_map, build->player_x, build->player_y);
+	if (elements_search(duplicated_map, 'E'))
 	{
-		ft_putstr_fd("Map is invalid\n" , 1);
+		ft_putstr_fd("Map is invalid\n", 1);
 		free_array(duplicated_map);
 		destroy_game(build);
 	}
 	free_array(duplicated_map);
 }
 
-char **copy_map(t_build *build)
+char	**copy_map(t_build *build)
 {
-	char **map;
-	int i;
+	char	**map;
+	int		i;
 
 	i = 0;
-	while(build->map[i])
+	while (build->map[i])
 		i++;
 	map = malloc(sizeof(char *) * (i + 1));
-	i= 0;
-	while(build->map[i])
+	i = 0;
+	while (build->map[i])
 	{
 		map[i] = ft_strdup_gnl(build->map[i]);
 		i++;
 	}
 	map[i] = NULL;
-	return(map);	
+	return (map);
 }
 
-void	fill_M(char **map , int px , int py)
+void	fill_M(char **map, int px, int py)
 {
-	if(map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E' || map[py][px] == 'M' )
-		return;
+	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E'
+		|| map[py][px] == 'M')
+		return ;
 	map[py][px] = 'M';
-	fill_M(map , px + 1 , py);
-	fill_M(map , px - 1 , py);
-	fill_M(map , px , py + 1);
-	fill_M(map , px , py - 1); 
+	fill_M(map, px + 1, py);
+	fill_M(map, px - 1, py);
+	fill_M(map, px, py + 1);
+	fill_M(map, px, py - 1);
 }
 
 void	fill_V(char **map, int px, int py)
@@ -155,7 +157,6 @@ void	fill_V(char **map, int px, int py)
 	fill_V(map, px, py + 1);
 	fill_V(map, px, py - 1);
 }
-
 
 // void print_map(char *map, int height)
 // {

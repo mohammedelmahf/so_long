@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 12:13:46 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 12:51:52 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,6 +209,26 @@ void    register_enemy_ass_d(t_build *build)
     }
 }
 
+void    register_exit_ass(t_build *build)
+{
+    int i;
+    int h;
+    int w;
+    char *path[1];
+    i = 0;
+    path[0] = "assets/exit/01.xpm";
+    while(i < 1)
+    {
+        build->exit_ass[i] = mlx_xpm_file_to_image(build->mlx , path[i] , &w , &h);
+        if(!build->exit_ass[i] || w > 64 || h> 64)
+        {
+            ft_putstr_fd("Error registring exit assets !\n", 1);
+            destroy_game(build);
+        }
+        i++;
+    }
+}
+
 void    register_ass_path(t_build *build)
 {
     register_map_ass(build);
@@ -219,4 +239,5 @@ void    register_ass_path(t_build *build)
     register_player_ass_d(build);
     register_player_c_ass(build);
     register_enemy_ass_d(build);
+    register_exit_ass(build);
 }

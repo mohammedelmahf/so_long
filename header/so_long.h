@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 11:46:48 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 12:52:00 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_build
 	int		exit;
 	int		exit_x;
 	int		exit_y;
-	void	*exit_ass;
+	void	*exit_ass[1];
 	int		enemy;
 	int		enemy_x;
 	int		enemy_y;
@@ -115,7 +115,7 @@ void	animate_enemy(t_build *build, int x, int y);
 int	c_frames_calculator(void);
 void	animate_c(t_build *build, int x, int y);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-
+void    register_exit_ass(t_build *build);
 
 void	apply_enemy_move(t_build *build, int x, int y);
 void	move_enemy(t_build *build);

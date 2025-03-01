@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 11:09:23 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:40:41 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ void	print_moves(t_build *build)
 
 int	render_map(t_build *build)
 {
-	// if (m_frames_calculator())
-	// 	move_enemy(build);
+	if (m_frames_calculator())
+		move_enemy(build);
 	draw_ass_animated(build);
 	return (0);
 }
@@ -218,6 +218,20 @@ int	c_frames_calculator(void)
 
 	current_time = current_time_in_ms();
 	if (current_time - last_time >= 150)
+	{
+		last_time = current_time;
+		return (1);
+	}
+	return (0);
+}
+
+int	m_frames_calculator(void)
+{
+	static long long	last_time;
+	long long			current_time;
+
+	current_time = current_time_in_ms();
+	if (current_time - last_time >= 300)
 	{
 		last_time = current_time;
 		return (1);

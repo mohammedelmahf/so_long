@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/28 10:45:00 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:40:48 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,8 @@ int	p_frames_calculator(void);
 long long	current_time_in_ms(void);
 
 
-
-
-
-
+int	m_frames_calculator(void);
+void    register_enemy_ass_d(t_build *build);
 void    register_player_ass_d(t_build *build);
 void    register_player_ass_u(t_build *build);
 void    register_player_ass(t_build *build);

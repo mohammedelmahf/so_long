@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 12:51:52 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 13:28:57 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ void    register_player_c_ass(t_build *build)
     int i;
     int w;
     int h;
-    char *path[5];
+    char *path[6];
 
     i = 0;
     path[0] = "assets/coin/01.xpm";
@@ -175,7 +175,8 @@ void    register_player_c_ass(t_build *build)
     path[2] = "assets/coin/03.xpm";
     path[3] = "assets/coin/04.xpm";
     path[4] = "assets/coin/05.xpm";
-    while(i < 5)
+    path[5] = "assets/exit/02.xpm";
+    while(i < 6)
     {
  
         build->c_ass[i] = mlx_xpm_file_to_image(build->mlx , path[i] , &w , &h);
@@ -228,6 +229,7 @@ void    register_exit_ass(t_build *build)
         i++;
     }
 }
+
 
 void    register_ass_path(t_build *build)
 {

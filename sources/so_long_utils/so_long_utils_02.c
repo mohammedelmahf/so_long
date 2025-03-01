@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 12:18:53 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/01 13:31:14 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,11 +132,12 @@ void	load_animation(t_build *build, int x, int y)
 			x * 64);
 	else if (build->map[x][y] == 'P')
 		animate_player(build, x, y);
-	// else if (build->map[x][y] == 'E')
-	// {
-	// 	mlx_put_image_to_window(build->mlx, build->win, build->exit_ass, y * 64, x
-	// 		* 64);
-	// }
+	else if (build->map[x][y] == 'E')
+	{
+		if(build->c == 0)
+			mlx_put_image_to_window(build->mlx, build->win, build->c_ass[5] ,y * 64, x
+				* 64);
+	}
 	else if (build->map[x][y] == 'C')
 		animate_c(build, x, y);
 	else if (build->map[x][y] == 'X')

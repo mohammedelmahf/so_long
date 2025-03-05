@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:07:22 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:13:29 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:18:04 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,28 +31,29 @@ char	**copy_map(t_build *build)
 	return (map);
 }
 
-void	fill_M(char **map, int px, int py)
+void	fill_m(char **map, int px, int py)
 {
 	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E'
 		|| map[py][px] == 'M')
 		return ;
 	map[py][px] = 'M';
-	fill_M(map, px + 1, py);
-	fill_M(map, px - 1, py);
-	fill_M(map, px, py + 1);
-	fill_M(map, px, py - 1);
+	fill_m(map, px + 1, py);
+	fill_m(map, px - 1, py);
+	fill_m(map, px, py + 1);
+	fill_m(map, px, py - 1);
 }
 
-void	fill_V(char **map, int px, int py)
+void	fill_v(char **map, int px, int py)
 {
 	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'V')
 		return ;
 	map[py][px] = 'V';
-	fill_V(map, px + 1, py);
-	fill_V(map, px - 1, py);
-	fill_V(map, px, py + 1);
-	fill_V(map, px, py - 1);
+	fill_v(map, px + 1, py);
+	fill_v(map, px - 1, py);
+	fill_v(map, px, py + 1);
+	fill_v(map, px, py - 1);
 }
+
 void	saving_elements_coordinates(t_build *build, int i, int j)
 {
 	if (build->map[i][j] == 'E')
@@ -74,7 +75,7 @@ void	saving_elements_coordinates(t_build *build, int i, int j)
 
 int	elements_search(char **map, char a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (map[i])

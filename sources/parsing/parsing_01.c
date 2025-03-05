@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:11:21 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:16:59 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	flood_fill(t_build *build)
 	char	**duplicated_map;
 
 	duplicated_map = copy_map(build);
-	fill_M(duplicated_map, build->player_x, build->player_y);
+	fill_m(duplicated_map, build->player_x, build->player_y);
 	if (elements_search(duplicated_map, 'C'))
 	{
 		ft_putstr_fd("Map is invalid\n", 1);
@@ -106,7 +106,7 @@ void	flood_fill(t_build *build)
 		destroy_game(build);
 	}
 	duplicated_map[build->player_y][build->player_x] = 'P';
-	fill_V(duplicated_map, build->player_x, build->player_y);
+	fill_v(duplicated_map, build->player_x, build->player_y);
 	if (elements_search(duplicated_map, 'E'))
 	{
 		ft_putstr_fd("Map is invalid\n", 1);

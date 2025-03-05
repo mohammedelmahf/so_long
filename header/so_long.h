@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:03:21 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:17:08 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void		saving_elements_coordinates(t_build *build, int i, int j);
 void		elements_coordinates(t_build *build);
 void		flood_fill(t_build *build);
 int			elements_search(char **map, char a);
-void		fill_M(char **map, int px, int py);
-void		fill_V(char **map, int px, int py);
+void		fill_m(char **map, int px, int py);
+void		fill_v(char **map, int px, int py);
 char		**copy_map(t_build *build);
 void		destroy_player_ass(t_build *build);
 void		destroy_enemy_ass(t_build *build);

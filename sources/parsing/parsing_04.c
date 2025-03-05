@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:07:18 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:10:36 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:18:12 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,4 +120,3 @@ void	elements_coordinates(t_build *build)
 		i++;
 	}
 }
-

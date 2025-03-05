@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/01 13:31:14 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 20:55:05 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ void	load_animation(t_build *build, int x, int y)
 	else if (build->map[x][y] == 'X')
 		animate_enemy(build, x, y);
 }
+
 void	animate_player(t_build *build, int x, int y)
 {
 	static int	i;
@@ -160,7 +161,7 @@ void	animate_player(t_build *build, int x, int y)
 		mlx_put_image_to_window(build->mlx, build->win, build->player_ass_d[i],
 			y * 64, x * 64);
 	else
-		mlx_put_image_to_window(build->mlx, build->win, build->player_ass_d[0],
+		mlx_put_image_to_window(build->mlx, build->win, build->player_ass[0],
 			y * 64, x * 64);
 	if (p_frames_calculator())
 	{

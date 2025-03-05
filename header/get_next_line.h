@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 19:57:30 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/15 15:48:33 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:26:45 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
 # include <stdint.h>
 
 # ifndef MAX_FD

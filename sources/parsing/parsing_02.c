@@ -6,39 +6,55 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 11:06:00 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:25:05 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/so_long.h"
 
-char	**arg_to_map(char **av)
+char	*read_map(int fd)
 {
-	int		fd;
 	char	*line;
 	char	*map_1d;
-	char	**map_2d;
 
-	fd = open(av[1], O_RDONLY);
-	line = get_next_line(fd);
-	if (!line)
-	{
-		ft_putstr_fd("Map is empty\n", 1);
-		exit(0);
-	}
 	map_1d = ft_strdup_gnl("");
+	line = get_next_line(fd);
 	while (line)
 	{
+		if (strcmp(line, "\n") == 0)
+		{
+			ft_putstr_fd("Error: Map contains an empty line\n", 2);
+			free(line);
+			free(map_1d);
+			close(fd);
+			exit(1);
+		}
 		map_1d = ft_strjoin_gnl(map_1d, line);
 		free(line);
 		line = get_next_line(fd);
 	}
+	return (map_1d);
+}
+
+char	**arg_to_map(char **av)
+{
+	int		fd;
+	char	*map_1d;
+	char	**map_2d;
+
+	fd = open(av[1], O_RDONLY);
+	if (fd < 0)
+	{
+		ft_putstr_fd("Error: Cannot open file\n", 2);
+		exit(1);
+	}
+	map_1d = read_map(fd);
 	close(fd);
 	map_2d = ft_split(map_1d, '\n');
-	free(line);
 	free(map_1d);
 	return (map_2d);
 }
+
 
 int	count_line(t_build *build)
 {

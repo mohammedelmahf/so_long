@@ -6,12 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 21:27:58 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 21:29:31 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:06:40 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/so_long.h"
-
 
 int	c_frames_calculator(void)
 {
@@ -40,6 +39,7 @@ int	m_frames_calculator(void)
 	}
 	return (0);
 }
+
 int	p_frames_calculator(void)
 {
 	static long long	last_time;
@@ -53,6 +53,7 @@ int	p_frames_calculator(void)
 	}
 	return (0);
 }
+
 long long	current_time_in_ms(void)
 {
 	struct timeval	te;

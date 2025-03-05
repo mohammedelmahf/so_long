@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/27 12:03:54 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:11:21 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,55 +115,3 @@ void	flood_fill(t_build *build)
 	}
 	free_array(duplicated_map);
 }
-
-char	**copy_map(t_build *build)
-{
-	char	**map;
-	int		i;
-
-	i = 0;
-	while (build->map[i])
-		i++;
-	map = malloc(sizeof(char *) * (i + 1));
-	i = 0;
-	while (build->map[i])
-	{
-		map[i] = ft_strdup_gnl(build->map[i]);
-		i++;
-	}
-	map[i] = NULL;
-	return (map);
-}
-
-void	fill_M(char **map, int px, int py)
-{
-	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E'
-		|| map[py][px] == 'M')
-		return ;
-	map[py][px] = 'M';
-	fill_M(map, px + 1, py);
-	fill_M(map, px - 1, py);
-	fill_M(map, px, py + 1);
-	fill_M(map, px, py - 1);
-}
-
-void	fill_V(char **map, int px, int py)
-{
-	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'V')
-		return ;
-	map[py][px] = 'V';
-	fill_V(map, px + 1, py);
-	fill_V(map, px - 1, py);
-	fill_V(map, px, py + 1);
-	fill_V(map, px, py - 1);
-}
-
-// void print_map(char *map, int height)
-// {
-//     int i = 0;
-//     while (i < height)
-//     {
-//         printf("%s\n", map[i]);
-//         i++;
-//     }
-// }

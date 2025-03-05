@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 21:27:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:00:43 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:06:57 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	x_frames_calculator(void)
 	return (0);
 }
 
-
-
 void	animate_c(t_build *build, int x, int y)
 {
 	static int	i;
@@ -43,6 +41,7 @@ void	animate_c(t_build *build, int x, int y)
 			i = 0;
 	}
 }
+
 void	animate_player(t_build *build, int x, int y)
 {
 	static int	i;

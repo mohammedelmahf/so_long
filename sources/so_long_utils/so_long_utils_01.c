@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 10:55:25 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 20:43:30 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:02:04 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void	destroy_player_ass(t_build *build)
 	mlx_destroy_image(build->mlx, build->player_ass_l[4]);
 	mlx_destroy_image(build->mlx, build->player_ass_l[5]);
 	mlx_destroy_image(build->mlx, build->player_ass_l[6]);
+	destroy_player_ass_r_d(build);
+}
+
+void	destroy_player_ass_r_d(t_build *build)
+{
 	mlx_destroy_image(build->mlx, build->player_ass_r[0]);
 	mlx_destroy_image(build->mlx, build->player_ass_r[1]);
 	mlx_destroy_image(build->mlx, build->player_ass_r[2]);

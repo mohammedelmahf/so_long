@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 21:26:34 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:03:21 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_build
 	int		height;
 }			t_build;
 
-// parsing
+// Parsing functions
 int			check_ber(char *ber);
 int			check_args(int ac, char **av);
 void		build_args(t_build *build);
@@ -75,7 +75,8 @@ void		fill_V(char **map, int px, int py);
 char		**copy_map(t_build *build);
 void		destroy_player_ass(t_build *build);
 void		destroy_enemy_ass(t_build *build);
-// utils
+
+// Utils
 void		ft_putstr_fd(char *s, int fd);
 size_t		ft_strlen(const char *str);
 char		**ft_split(char const *s, char c);
@@ -83,12 +84,21 @@ void		free_array(char **map);
 char		*ft_strchr(const char *s, int c);
 char		*ft_itoa(int n);
 char		*ft_strjoin(char const *s1, char const *s2);
-// mlx_lodaer
+
+// Mlx_loader
+void		register_enemy_ass_d(t_build *build);
+void		register_player_ass_d(t_build *build);
+void		register_player_ass_u(t_build *build);
+void		register_player_ass(t_build *build);
+void		register_player_ass_l(t_build *build);
+void		register_player_ass_r(t_build *build);
+void		register_player_c_ass(t_build *build);
 void		draw_ass(t_build *build);
 void		register_map_ass(t_build *build);
 void		ass_to_window(t_build *build, int x, int y);
 void		register_ass_path(t_build *build);
-// so_long_utils
+
+// So_long_utils
 int			destroy_game(t_build *build);
 void		move_to_position(t_build *build, int x, int y);
 void		move_player(t_build *build, int x, int y);
@@ -100,26 +110,18 @@ void		load_animation(t_build *build, int x, int y);
 void		animate_player(t_build *build, int x, int y);
 int			p_frames_calculator(void);
 long long	current_time_in_ms(void);
-
 int			m_frames_calculator(void);
-void		register_enemy_ass_d(t_build *build);
-void		register_player_ass_d(t_build *build);
-void		register_player_ass_u(t_build *build);
-void		register_player_ass(t_build *build);
-void		register_player_ass_l(t_build *build);
-void		register_player_ass_r(t_build *build);
-void		register_player_c_ass(t_build *build);
 int			x_frames_calculator(void);
 void		animate_enemy(t_build *build, int x, int y);
 int			c_frames_calculator(void);
 void		animate_c(t_build *build, int x, int y);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		register_exit_ass(t_build *build);
-
+void		destroy_player_ass_r_d(t_build *build);
 void		apply_enemy_move(t_build *build, int x, int y);
 void		move_enemy(t_build *build);
 int			is_wall(int x, int y, t_build *build);
-
 void		print_map(void *map, int height);
 void		start_mlx(t_build *build);
+
 #endif

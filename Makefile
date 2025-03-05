@@ -20,6 +20,7 @@ SRCS    = 	main.c \
 			utils/ft_strjoin.c \
 			sources/mlx_lodaer/mlx_lodaer.c\
 			sources/mlx_path/mlx_path01.c\
+			sources/mlx_path/mlx_path02.c\
 			sources/parsing/parsing_01.c \
 			sources/parsing/parsing_02.c \
 			sources/parsing/parsing_03.c \

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:00:33 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:49:19 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	event_handler(int key, t_build *build)
 		move_player(build, 0, 1);
 	else if (key == 100 || key == 65363)
 		move_player(build, 1, 0);
-	return (1);
+	return 0;
 }
 
 void	move_player(t_build *build, int x, int y)

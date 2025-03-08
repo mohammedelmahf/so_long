@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:16:59 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:49:40 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ int	check_map(t_build *build)
 		return (0);
 	else
 		elements_coordinates(build);
-	flood_fill(build);
+	if(!flood_fill(build))
+		return (0);
 	return (1);
 }
 
@@ -93,25 +94,31 @@ void	build_args(t_build *build)
 	build->height = 0;
 }
 
-void	flood_fill(t_build *build)
+int	flood_fill(t_build *build)
 {
 	char	**duplicated_map;
 
 	duplicated_map = copy_map(build);
+	if (!duplicated_map)
+	{
+		ft_putstr_fd("Error: Failed to duplicate map\n", 2);
+		return(0);
+	}
 	fill_m(duplicated_map, build->player_x, build->player_y);
 	if (elements_search(duplicated_map, 'C'))
 	{
 		ft_putstr_fd("Map is invalid\n", 1);
 		free_array(duplicated_map);
-		destroy_game(build);
+		return(0);
 	}
 	duplicated_map[build->player_y][build->player_x] = 'P';
 	fill_v(duplicated_map, build->player_x, build->player_y);
 	if (elements_search(duplicated_map, 'E'))
 	{
-		ft_putstr_fd("Map is invalid\n", 1);
+		ft_putstr_fd("Map is invaliddd\n", 1);
 		free_array(duplicated_map);
-		destroy_game(build);
+		return(0);
 	}
 	free_array(duplicated_map);
+	return(1);
 }

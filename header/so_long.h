@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:17:08 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:49:58 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void		elements_counter(t_build *build);
 int			check_elements(t_build *build);
 void		saving_elements_coordinates(t_build *build, int i, int j);
 void		elements_coordinates(t_build *build);
-void		flood_fill(t_build *build);
+int		flood_fill(t_build *build);
 int			elements_search(char **map, char a);
 void		fill_m(char **map, int px, int py);
 void		fill_v(char **map, int px, int py);

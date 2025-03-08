@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:15:56 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:31:30 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@ char	*read_map(int fd)
 
 	map_1d = ft_strdup_gnl("");
 	line = get_next_line(fd);
+	if(!line)
+	{
+		ft_putstr_fd("Error : Map is invalid\n",1);
+		exit(0);
+	}
 	while (line)
 	{
 		if (strcmp(line, "\n") == 0)
 		{
-			ft_putstr_fd("Error: Map contains an empty line\n", 2);
+			ft_putstr_fd("Error : Map contains an empty line\n", 2);
 			free(line);
 			free(map_1d);
 			close(fd);

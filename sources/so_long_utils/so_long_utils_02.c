@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/06 19:25:13 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:57:19 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	move_player(t_build *build, int x, int y)
 			&& build->c == 0)
 		{
 			move_to_position(build, x, y);
+			printf("you win\n");
 			destroy_game(build);
 		}
 		else if (build->map[build->player_y + y][build->player_x + x] == 'X')

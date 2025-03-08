@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 13:49:58 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:21:20 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ typedef struct s_build
 	int		height;
 }			t_build;
 
+
+void	free_gnl_buffer(int fd);
 // Parsing functions
 int			check_ber(char *ber);
 int			check_args(int ac, char **av);

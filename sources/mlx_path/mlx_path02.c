@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:20:28 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 21:06:00 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:23:42 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	register_player_ass(t_build *build)
 				&h);
 		if (!build->player_ass[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring player assets !\n", 1);
+			ft_putstr_fd("Error\nregistring player assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;
@@ -54,7 +54,7 @@ void	register_player_c_ass(t_build *build)
 		if (!build->c_ass[i] || w > 64 || h > 64)
 		{
 			exit(0);
-			ft_putstr_fd("Error registring collectibles assets !\n", 1);
+			ft_putstr_fd("Error\nregistring collectibles assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;
@@ -76,7 +76,7 @@ void	register_enemy_ass_d(t_build *build)
 				&h);
 		if (!build->enemey_ass_d[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring enemy assets !\n", 1);
+			ft_putstr_fd("Error\nregistring enemy assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;
@@ -97,7 +97,7 @@ void	register_exit_ass(t_build *build)
 		build->exit_ass[i] = mlx_xpm_file_to_image(build->mlx, path[i], &w, &h);
 		if (!build->exit_ass[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring exit assets !\n", 1);
+			ft_putstr_fd("Error\nregistring exit assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;

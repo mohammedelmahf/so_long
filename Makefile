@@ -1,6 +1,6 @@
 NAME    = so_long
 CC      = cc
-FLAGS   = -Wall -Wextra -Werror -fPIE -fsanitize=address -g3
+FLAGS   = -Wall -Wextra -Werror -fPIE #-fsanitize=address -g3
 RM      = rm -f
 
 # Path to MiniLibX

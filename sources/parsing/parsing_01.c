@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 20:56:14 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:22:23 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int	check_args(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		ft_putstr_fd("Error : Worng  number of arguments\n", 1);
+		ft_putstr_fd("Error\nWorng  number of arguments\n", 1);
 		ft_putstr_fd("Usage : ./so_long [map.ber]\n", 1);
 		return (0);
 	}
 	if (!check_ber(av[1]))
 	{
-		ft_putstr_fd("Error : Wrong file extension\n", 1);
+		ft_putstr_fd("Error\nWrong file extension\n", 1);
 		return (0);
 	}
 	if (open(av[1], O_RDONLY) == -1)
@@ -115,7 +115,7 @@ int	flood_fill(t_build *build)
 	fill_v(duplicated_map, build->player_x, build->player_y);
 	if (elements_search(duplicated_map, 'E'))
 	{
-		ft_putstr_fd("Map is invaliddd\n", 1);
+		ft_putstr_fd("Error\nMap is invalid\n", 1);
 		free_array(duplicated_map);
 		return(0);
 	}

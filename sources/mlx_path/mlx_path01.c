@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:12:06 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 21:17:35 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:23:22 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	register_map_ass(t_build *build)
 		build->map_ass[i] = mlx_xpm_file_to_image(build->mlx, path[i], &w, &h);
 		if (!build->map_ass[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring map assets !\n", 1);
+			ft_putstr_fd("Error\nregistring map assets !\n", 1);
 			destroy_game(build);
 		}
 	}
@@ -54,7 +54,7 @@ void	register_player_ass_u(t_build *build)
 				&h);
 		if (!build->player_ass_u[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring player up assets !\n", 1);
+			ft_putstr_fd("Error\nregistring player up assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;
@@ -82,7 +82,7 @@ void	register_player_ass_d(t_build *build)
 				&h);
 		if (!build->player_ass_d[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring player down assets !\n", 1);
+			ft_putstr_fd("Error\nregistring player down assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;
@@ -110,7 +110,7 @@ void	register_player_ass_r(t_build *build)
 				&h);
 		if (!build->player_ass_r[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring player right assets !\n", 1);
+			ft_putstr_fd("Error\nregistring player right assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;
@@ -138,7 +138,7 @@ void	register_player_ass_l(t_build *build)
 				&h);
 		if (!build->player_ass_l[i] || w > 64 || h > 64)
 		{
-			ft_putstr_fd("Error registring player left assets !\n", 1);
+			ft_putstr_fd("Error\nregistring player left assets !\n", 1);
 			destroy_game(build);
 		}
 		i++;

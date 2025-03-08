@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:07:18 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:18:12 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:23:00 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_map3(t_build *build)
 		if (build->map[i][0] != '1' || build->map[i][ft_strlen(build->map[i])
 			- 1] != '1')
 		{
-			ft_putstr_fd("Map is not valid\n", 1);
+			ft_putstr_fd("Error\nMap is not valid\n", 1);
 			return (0);
 		}
 		i++;
@@ -55,22 +55,22 @@ int	check_elements(t_build *build)
 	elements_counter(build);
 	if (build->c < 1)
 	{
-		ft_putstr_fd("Wrong number of collectibles\n", 1);
+		ft_putstr_fd("Error\nWrong number of collectibles\n", 1);
 		return (0);
 	}
 	if (build->player != 1)
 	{
-		ft_putstr_fd("Wrong number of players\n", 1);
+		ft_putstr_fd("Error\nWrong number of players\n", 1);
 		return (0);
 	}
 	if (build->exit != 1)
 	{
-		ft_putstr_fd("Wrong number of exits\n", 1);
+		ft_putstr_fd("Error\nWrong number of exits\n", 1);
 		return (0);
 	}
 	if (build->enemy < 1)
 	{
-		ft_putstr_fd("Wrong number of enemies\n", 1);
+		ft_putstr_fd("Error\nWrong number of enemies\n", 1);
 		return (0);
 	}
 	return (1);

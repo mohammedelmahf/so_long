@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 21:27:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:06:57 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 21:16:37 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,8 @@ void	animate_enemy(t_build *build, int x, int y)
 
 	mlx_put_image_to_window(build->mlx, build->win, build->map_ass[1], y * 64, x
 		* 64);
-	if (build->enemy_direction == 'r')
-		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_r[i],
-			y * 64, x * 64);
-	else if (build->enemy_direction == 'l')
-		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_l[i],
-			y * 64, x * 64);
-	else if (build->enemy_direction == 'u')
-		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_u[i],
-			y * 64, x * 64);
-	else
-		mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_d[i],
-			y * 64, x * 64);
+	mlx_put_image_to_window(build->mlx, build->win, build->enemey_ass_d[i],
+		y * 64, x * 64);
 	if (x_frames_calculator())
 	{
 		i++;

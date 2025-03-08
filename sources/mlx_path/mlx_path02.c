@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:20:28 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/05 22:20:54 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/08 21:06:00 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	register_player_c_ass(t_build *build)
 		build->c_ass[i] = mlx_xpm_file_to_image(build->mlx, path[i], &w, &h);
 		if (!build->c_ass[i] || w > 64 || h > 64)
 		{
+			exit(0);
 			ft_putstr_fd("Error registring collectibles assets !\n", 1);
 			destroy_game(build);
 		}

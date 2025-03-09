@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:37:56 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/09 14:03:47 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:05:03 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	start_mlx(t_build *build)
 	draw_ass(build);
 	mlx_string_put(build->mlx, build->win, 0, (build->height + 0.5) * 64,
 		0x00FFFFFF, "Moves : 0");
-	mlx_hook(build->win, 7, 1L << 0, &event_handler, build);
+	mlx_hook(build->win, 2, 1L << 0, &event_handler, build);
 	mlx_hook(build->win, 17, 1L << 17, &destroy_game, build);
 	mlx_loop_hook(build->mlx, &render_map, build);
 	mlx_loop(build->mlx);

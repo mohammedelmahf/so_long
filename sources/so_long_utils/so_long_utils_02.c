@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:42:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 21:13:38 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:05:30 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	event_handler(int key, t_build *build)
 {
-	printf("here\n");
 	if (key == 65307)
 	{
 		destroy_game(build);

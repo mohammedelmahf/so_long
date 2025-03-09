@@ -6,34 +6,33 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:24:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 22:21:05 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:25:14 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/so_long.h"
 
-
-void	free_gnl_buffer(int fd) 
+void	free_gnl_buffer(int fd)
 {
-    char	*temp;
+	char	*temp;
 
-    while ((temp = get_next_line(fd)))
-        free(temp);
+	temp = get_next_line(fd);
+	while (temp)
+	{
+		free(temp);
+		temp = get_next_line(fd);
+	}
 }
 
 char	*read_map(int fd)
 {
 	char	*line;
 	char	*map_1d;
-	
+
 	map_1d = ft_strdup_gnl("");
 	line = get_next_line(fd);
-	if(!line)
-	{
-		ft_putstr_fd("Error\nMap is invalid\n",1);
-		free(map_1d);
-		exit(1);
-	}
+	if (!line)
+		handle_invalid_map(map_1d);
 	while (line)
 	{
 		if (strcmp(line, "\n") == 0)
@@ -69,16 +68,6 @@ char	**arg_to_map(char **av)
 	map_2d = ft_split(map_1d, '\n');
 	free(map_1d);
 	return (map_2d);
-}
-
-int	count_line(t_build *build)
-{
-	int	i;
-
-	i = 0;
-	while (build->map[i])
-		i++;
-	return (i);
 }
 
 int	check_map1(t_build *build)

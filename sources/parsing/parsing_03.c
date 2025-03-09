@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:07:22 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 13:41:21 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:26:33 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	fill_m(char **map, int px, int py)
 	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E'
 		|| map[py][px] == 'M')
 		return ;
-	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'E' || map[py][px] == 'M')
-		return;
 	map[py][px] = 'M';
 	fill_m(map, px + 1, py);
 	fill_m(map, px - 1, py);
@@ -50,7 +48,7 @@ void	fill_v(char **map, int px, int py)
 	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'V')
 		return ;
 	if (map[py][px] == '1' || map[py][px] == 'X' || map[py][px] == 'V')
-		return;
+		return ;
 	map[py][px] = 'V';
 	fill_v(map, px + 1, py);
 	fill_v(map, px - 1, py);

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:36:01 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 22:21:20 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:27:12 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ typedef struct s_build
 	int		height;
 }			t_build;
 
-
-void	free_gnl_buffer(int fd);
 // Parsing functions
 int			check_ber(char *ber);
 int			check_args(int ac, char **av);
@@ -70,13 +68,15 @@ void		elements_counter(t_build *build);
 int			check_elements(t_build *build);
 void		saving_elements_coordinates(t_build *build, int i, int j);
 void		elements_coordinates(t_build *build);
-int		flood_fill(t_build *build);
+int			flood_fill(t_build *build);
 int			elements_search(char **map, char a);
 void		fill_m(char **map, int px, int py);
 void		fill_v(char **map, int px, int py);
 char		**copy_map(t_build *build);
 void		destroy_player_ass(t_build *build);
 void		destroy_enemy_ass(t_build *build);
+void		handle_invalid_map(char *map_1d);
+void		free_gnl_buffer(int fd);
 
 // Utils
 void		ft_putstr_fd(char *s, int fd);

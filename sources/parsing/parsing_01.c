@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/08 22:22:23 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:18:28 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	check_map(t_build *build)
 		return (0);
 	else
 		elements_coordinates(build);
-	if(!flood_fill(build))
+	if (!flood_fill(build))
 		return (0);
 	return (1);
 }
@@ -102,14 +102,14 @@ int	flood_fill(t_build *build)
 	if (!duplicated_map)
 	{
 		ft_putstr_fd("Error\nFailed to duplicate map\n", 2);
-		return(0);
+		return (0);
 	}
 	fill_m(duplicated_map, build->player_x, build->player_y);
 	if (elements_search(duplicated_map, 'C'))
 	{
 		ft_putstr_fd("Error\nMap is invalid\n", 1);
 		free_array(duplicated_map);
-		return(0);
+		return (0);
 	}
 	duplicated_map[build->player_y][build->player_x] = 'P';
 	fill_v(duplicated_map, build->player_x, build->player_y);
@@ -117,8 +117,8 @@ int	flood_fill(t_build *build)
 	{
 		ft_putstr_fd("Error\nMap is invalid\n", 1);
 		free_array(duplicated_map);
-		return(0);
+		return (0);
 	}
 	free_array(duplicated_map);
-	return(1);
+	return (1);
 }

@@ -1,7 +1,7 @@
 NAME    = so_long
 CC      = cc
 FLAGS   = -Wall -Wextra -Werror -fPIE #-fsanitize=address -g3
-RM      = rm -f
+RM      = rm -rf
 
 # Path to MiniLibX
 MLX_DIR = minilibx-linux

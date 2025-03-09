@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:40:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/09 15:18:28 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 21:04:10 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_args(int ac, char **av)
 	}
 	if (open(av[1], O_RDONLY) == -1)
 	{
-		perror("Error");
+		ft_putstr_fd("Error\nNo such file or directory\n", 1);
 		return (0);
 	}
 	return (1);
